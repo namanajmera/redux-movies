@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createRandomMovie } from "../data";
-import { addMovie, removeMovies } from "../store";
+import { addMovie, removeMovies } from "../store/moviesStore";
 
 export default function MovieList() {
   const dispatch = useDispatch();
