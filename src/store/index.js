@@ -5,17 +5,31 @@ const songSlice = createSlice({
    initialState: [],
    reducers: {
       addSong(state, action) {
-         state.push(...action.payload);
+         state.push(action.payload);
       },
       removeSong(state, action) {
-         // 
+         state.splice(state.indexOf(action.payload), 1);
+      }
+   }
+})
+
+const movieSplice = createSlice({
+   name: 'movies',
+   initialState: [],
+   reducers: {
+      addMovie(state, action) {
+         state.push(action.payload);
+      },
+      removeMovies(state, action) {
+         state.splice(state.indexOf(action.payload), 1);
       }
    }
 })
 
 const store = configureStore({
    reducer: {
-      songs: songSlice.reducer
+      songs: songSlice.reducer,
+      movies: movieSplice.reducer,
    }
 });
 
@@ -32,4 +46,5 @@ const store = configureStore({
 // console.log(store.getState());
 
 export { store };
-export const { addSong } = songSlice.actions;
+export const { addSong, removeSong } = songSlice.actions;
+export const { addMovie, removeMovies } = movieSplice.actions;
