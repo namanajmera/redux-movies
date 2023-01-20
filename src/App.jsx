@@ -3,12 +3,13 @@ import { useDispatch } from "react-redux";
 import "./App.css";
 import MovieList from "./components/MovieList";
 import SongList from "./components/SongList";
-import { resetMovies } from "./store/moviesStore";
+import { reset } from "./store";
+
 
 function App() {
   const dispatch = useDispatch();
   const handleResetClick = () => {
-    dispatch(resetMovies());
+    dispatch(reset());
   };
   return (
     <div className="container is-fluid">

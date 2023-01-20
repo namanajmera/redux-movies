@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createRandomSong } from "../data";
-import { addSong, removeSong } from "../store/songsStore";
+import { addSong, removeSong } from "../store/slice/songsStore";
 
 export default function SongList() {
   const dispatch = useDispatch();

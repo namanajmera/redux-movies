@@ -10,10 +10,12 @@ export const movieSplice = createSlice({
       removeMovies(state, action) {
          state.splice(state.indexOf(action.payload), 1);
       },
-      resetMovies(state,action){
+   },
+   extraReducers(builder) {
+      builder.addCase('app/reset', (state, payload) => {
          return [];
-      }
+      })
    }
 })
 
-export const { addMovie, removeMovies, resetMovies } = movieSplice.actions;
+export const { addMovie, removeMovies } = movieSplice.actions;

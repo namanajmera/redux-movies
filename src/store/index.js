@@ -1,6 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { movieSplice } from './moviesStore';
-import { songSlice } from './songsStore';
+import { configureStore, createAction } from '@reduxjs/toolkit';
+import { movieSplice } from './slice/moviesStore';
+import { songSlice } from './slice/songsStore';
 
 const store = configureStore({
    reducer: {
@@ -9,6 +9,7 @@ const store = configureStore({
    }
 });
 
+export const reset = createAction("app/reset");
 // console.log(store.getState());
 
 // store.dispatch(
